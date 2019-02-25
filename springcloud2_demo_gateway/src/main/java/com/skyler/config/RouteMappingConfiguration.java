@@ -6,13 +6,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Description:
+ * Description: 此处的配置与在application.yml中的配置相同
  * <p></p>
  * <pre>
+ *  application.yml file
  *
- *   NB.
+ *  spring:
+ *   cloud:
+ *     gateway:
+ *      routes:
+ *        - id: service1
+ *          uri: lb://service1
+ *          predicates:
+ *            - Path=/api-a/**
  * </pre>
- * <p>
  * Created by skyler on 2019-02-25 at 20:41
  */
 @Configuration
