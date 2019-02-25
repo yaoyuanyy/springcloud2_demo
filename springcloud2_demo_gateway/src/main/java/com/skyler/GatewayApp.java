@@ -1,4 +1,4 @@
-package com.s.skyler;
+package com.skyler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

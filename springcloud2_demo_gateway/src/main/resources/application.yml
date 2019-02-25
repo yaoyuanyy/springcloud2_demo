@@ -10,15 +10,18 @@ eureka:
 spring:
   cloud:
     gateway:
-      routes:
-        - id: service1
-          uri: lb://service1
-          predicates:
-            - Path=/api-a/**
+## 这里可以通过java config的方式配置mapping, @see RouteMappingConfiguration
+#      routes:
+#        - id: service1
+#          uri: lb://service1
+#          predicates:
+#            - Path=/api-a/**
       discovery:
         locator:
           enabled: true
           lowerCaseServiceId: true
+#     如果你的项目中包含了spring-cloud-starter-gateway，但你不想启动网关的时候
+      enabled: true
 logging:
   level:
     org:
