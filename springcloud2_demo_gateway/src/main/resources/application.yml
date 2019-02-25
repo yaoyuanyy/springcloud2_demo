@@ -1,0 +1,27 @@
+server:
+  port: 6001
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://47.98.189.37:20280/eureka/
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: service1
+          uri: lb://service1
+          predicates:
+            - Path=/api-a/**
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
