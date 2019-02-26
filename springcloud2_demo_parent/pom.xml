@@ -12,6 +12,14 @@
     <name>springcloud2_demo_parent</name>
     <url>http://maven.apache.org</url>
 
+    <developers>
+        <developer>
+            <email>yaoyihao1@gmail.com</email>
+            <name>skyler</name>
+            <organizationUrl>https://github.com/yaoyuanyy</organizationUrl>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

@@ -25,8 +25,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RouteMappingConfiguration {
 
-    @Bean
-    public RouteLocator routeLocator(RouteLocatorBuilder builder){
-        return builder.routes().route(r -> r.path("/api-a/**").uri("lb://service1")).build();
-    }
+//    @Bean
+//    public RouteLocator routeLocator(RouteLocatorBuilder builder){
+//        return builder.routes().route(r -> r.path("/api-a/**").uri("lb://service1")).build();
+//    }
 }
