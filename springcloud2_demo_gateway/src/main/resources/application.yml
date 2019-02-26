@@ -1,3 +1,14 @@
+# include: '*' 表示：暴露所有的endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: features, info
+  endpoint:
+    mappings:
+      enabled: false
+
 server:
   port: 6001
 
@@ -10,6 +21,7 @@ eureka:
 spring:
   cloud:
     gateway:
+# 这里可以通过java config的方式配置mapping, @see RouteMappingConfiguration
       routes:
         - id: service1
           uri: lb://service1
@@ -25,3 +37,5 @@ logging:
       springframework:
         cloud:
           gateway: TRACE
+        boot:
+          actuate: trace

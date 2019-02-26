@@ -1,0 +1,22 @@
+# include: '*' 表示：暴露所有的endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: features, info
+  endpoint:
+    mappings:
+      enabled: false
+
+server:
+  port: 6000
+
+logging:
+  level:
+    org:
+      springframework:
+        boot: TRACE
+spring:
+  application:
+    name: skyler-springboot2
