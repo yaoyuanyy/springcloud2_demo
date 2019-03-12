@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.skyler</groupId>
-    <artifactId>springboot2_demo_consumer_ribbon</artifactId>
+    <artifactId>springcloud2_demo_consumer_ribbon</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
