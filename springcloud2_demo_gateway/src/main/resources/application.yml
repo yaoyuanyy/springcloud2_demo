@@ -17,7 +17,12 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://47.98.189.37:20280/eureka/
+#      defaultZone: http://47.98.189.37:20280/eureka/
+      zone2: http://47.98.189.37:20280/eureka/
+    region: beijing
+    availability-zones.beijing: zone1,zone2
+    prefer-same-zone-eureka: true
+
 spring:
   cloud:
     gateway:
@@ -27,9 +32,13 @@ spring:
           uri: lb://service1
           predicates:
             - Path=/api-a/**
+          filters:
+# 在转发前去掉url中的/api-a。否则最后的请求url就成了 http://serverIp:port/api-a/add?a=1&b=2&accessToken=12,而访问serverIp的正确路径是http://serverIp:port/add?a=1&b=2&accessToken=12
+            - StripPrefix=1
       discovery:
         locator:
-          enabled: true
+# 如果为true,gateway将自己服务注册到eureka上；同时，http://localhost:6001/service1/add?a=1&b=2&accessToken=12,也可以访问成功
+          enabled: false
           lowerCaseServiceId: true
 #     如果你的项目中包含了spring-cloud-starter-gateway，但你不想启动网关的时候
       enabled: true

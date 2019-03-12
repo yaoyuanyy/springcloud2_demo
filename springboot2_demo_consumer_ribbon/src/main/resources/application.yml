@@ -1,0 +1,31 @@
+# include: '*' 表示：暴露所有的endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: features, info
+  endpoint:
+    mappings:
+      enabled: false
+
+
+eureka:
+  client:
+    serviceUrl:
+      zone2: http://localhost:20282/eureka/
+      zone3: http://localhost:20283/eureka/
+    region: beijing
+    availability-zones.beijing: zone2,zone3
+    prefer-same-zone-eureka: true
+  instance:
+    prefer-ip-address: true
+    metadata-map.zone: zone2
+
+
+logging:
+  level:
+    org:
+      springframework:
+        boot: TRACE
+        cloud: TRACE

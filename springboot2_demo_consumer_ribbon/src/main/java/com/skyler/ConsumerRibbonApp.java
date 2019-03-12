@@ -2,6 +2,8 @@ package com.skyler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 
 /**
  * Description:
@@ -14,9 +16,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Created by skyler on 2019-02-26 at 18:20
  */
 @SpringBootApplication
-public class Springboot2App {
+@EnableDiscoveryClient
+public class ConsumerRibbonApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(Springboot2App.class, args);
+        SpringApplication.run(ConsumerRibbonApp.class, args);
     }
 }
