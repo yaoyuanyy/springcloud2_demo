@@ -1,0 +1,6 @@
+server:
+  port: 6003
+
+spring:
+  application:
+    name: service-provider

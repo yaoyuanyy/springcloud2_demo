@@ -3,4 +3,4 @@ server:
 
 spring:
   application:
-    name: skyler-springboot2
+    name: consumer-ribbon
