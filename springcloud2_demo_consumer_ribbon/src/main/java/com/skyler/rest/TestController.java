@@ -25,6 +25,12 @@ public class TestController {
     @Autowired
     public TestController(RestTemplate restTemplate) {this.restTemplate = restTemplate;}
 
+    /**
+     * curl -X GET http://localhost:6002/echo/2018
+     *
+     * @param str
+     * @return
+     */
     @RequestMapping(value = "/echo/{str}", method = RequestMethod.GET)
     public String echo(@PathVariable String str) {
         return restTemplate.getForObject("http://service-provider/echo/" + str, String.class);

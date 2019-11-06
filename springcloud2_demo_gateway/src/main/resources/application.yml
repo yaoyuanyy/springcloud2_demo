@@ -17,11 +17,11 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-#      defaultZone: http://47.98.189.37:20280/eureka/
-      zone2: http://47.98.189.37:20282/eureka/
-    region: beijing
-    availability-zones.beijing: zone2,zone3
-    prefer-same-zone-eureka: true
+      defaultZone: http://47.98.189.37:20282/eureka/
+#      zone2: http://47.98.189.37:20282/eureka/
+#    region: beijing
+#    availability-zones.beijing: zone2,zone3
+#    prefer-same-zone-eureka: true
 
 spring:
   cloud:
