@@ -1,7 +1,7 @@
 package com.skyler.rest;
 
 import com.skyler.client.BrandFeignClient;
-import com.skyler.client.BrandParam;
+import com.skyler.client.param.BrandParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
