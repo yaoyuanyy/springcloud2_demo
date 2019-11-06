@@ -1,0 +1,25 @@
+# include: '*' 表示：暴露所有的endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: features, info
+  endpoint:
+    mappings:
+      enabled: false
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://47.98.189.37:20282/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    org:
+      springframework:
+        boot: info
+        cloud: info
