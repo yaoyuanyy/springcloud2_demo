@@ -4,10 +4,7 @@ import com.skyler.client.BrandFeignClient;
 import com.skyler.client.param.BrandParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.skyler.client.dto.ResultDTO;
 
 /**
@@ -29,5 +26,11 @@ public class BrandController {
     @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResultDTO create(@RequestBody BrandParam param) {
         return brandFeignClient.create(param);
+    }
+
+    @GetMapping("/query")
+    public ResultDTO query(@RequestParam("id") Long id, @RequestParam("code") String code){
+        System.out.println(brandFeignClient.getClass().getName());
+        return brandFeignClient.query(id, code);
     }
 }
